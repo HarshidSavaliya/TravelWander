@@ -17,6 +17,10 @@ body {
     background-color: rgb(21, 74, 74);
     padding: 1rem 2rem;
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 .logo {
@@ -25,6 +29,7 @@ body {
     font-weight: 700;
 }
 
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -49,24 +54,20 @@ body {
     color: #000000;
 }
 
-/* Hamburger Menu (Hidden by Default) */
-.toggle {
+/* Hamburger Menu */
+.menu-toggle {
     display: none;
 }
 
 .hamburger {
     display: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #fff;
     cursor: pointer;
 }
 
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-
     .hamburger {
         display: block;
     }
@@ -75,28 +76,30 @@ body {
         position: absolute;
         top: 60px;
         right: 0;
-        height: 100vh;
         width: 100%;
         background-color: rgba(51, 51, 51, 0.9);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        transform: translateX(100%);
-        transition: transform 0.4s ease-in;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    /* Show Nav Links When Checkbox is Checked */
+    .menu-toggle:checked~.nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .nav-links li {
         margin: 1.5rem 0;
     }
-
-    /* Show Nav Links When Checkbox is Checked */
-    .toggle:checked~.nav-links {
-        transform: translateX(0);
-    }
 }
 
 /* Image Title Section */
-.image-titel {
+.image-title {
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -111,18 +114,18 @@ body {
     padding: 0 20px;
 }
 
-.image-titel h1 {
+.image-title h1 {
     font-size: 6vh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: ease 0.3s;
 }
 
-.image-titel h1:hover {
+.image-title h1:hover {
     color: transparent;
     -webkit-text-stroke: 1px white;
 }
 
-.image-titel p {
+.image-title p {
     font-size: 1.2em;
     font-weight: 700;
     margin: 20px;
@@ -147,13 +150,13 @@ body {
     background-color: #ff1493;
 }
 
-/* Responsive Adjustments for Smaller Screens */
+/* Responsive Mobile Screens */
 @media (max-width: 480px) {
-    .image-titel h1 {
+    .image-title h1 {
         font-size: 4vh;
     }
 
-    .image-titel p {
+    .image-title p {
         font-size: 1em;
     }
 
@@ -163,13 +166,13 @@ body {
     }
 }
 
-/* Laptop and Larger Screens */
+/* Laptop  Screens */
 @media (min-width: 769px) {
-    .image-titel h1 {
+    .image-title h1 {
         font-size: 8vh;
     }
 
-    .image-titel p {
+    .image-title p {
         font-size: 1.5em;
     }
 
