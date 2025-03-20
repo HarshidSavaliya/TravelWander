@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 /* Navbar Styles */
@@ -14,12 +15,13 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(21, 74, 74);
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 2rem;
+    width: 100%;
 }
 
 .logo {
     color: #ffffff;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
@@ -29,16 +31,16 @@ body {
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin-left: 20px;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    padding: 15px 30px;
-
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -59,8 +61,12 @@ body {
     cursor: pointer;
 }
 
-/* Responsive Styles */
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
     .hamburger {
         display: block;
     }
@@ -71,7 +77,7 @@ body {
         right: 0;
         height: 100vh;
         width: 100%;
-        background-color: #333;
+        background-color: rgba(51, 51, 51, 0.9);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -87,33 +93,37 @@ body {
     .toggle:checked~.nav-links {
         transform: translateX(0);
     }
-    
-/* image-titel */
+}
+
+/* Image Title Section */
 .image-titel {
     width: 100%;
-    height: 500px;
-    background-size: 100% 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
     background-image: url(background.jpg);
-    align-content: center;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: #ffffff;
-
+    text-align: center;
+    padding: 0 20px;
 }
 
 .image-titel h1 {
-    font-size: 15vh;
-    text-shadow: 2px black;
+    font-size: 6vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: ease 0.3s;
 }
 
 .image-titel h1:hover {
     color: transparent;
     -webkit-text-stroke: 1px white;
-
 }
 
 .image-titel p {
-    font: 1.5em sans-serif;
+    font-size: 1.2em;
     font-weight: 700;
     margin: 20px;
     margin-bottom: 30px;
@@ -123,12 +133,48 @@ body {
 .button {
     text-decoration: none;
     font-family: sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #ffffff;
     background-color: deeppink;
     margin-top: 20px;
-    padding: 15px 50px;
+    padding: 12px 40px;
     border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
+
+.button:hover {
+    background-color: #ff1493;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 480px) {
+    .image-titel h1 {
+        font-size: 4vh;
+    }
+
+    .image-titel p {
+        font-size: 1em;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 10px 30px;
+    }
+}
+
+/* Laptop and Larger Screens */
+@media (min-width: 769px) {
+    .image-titel h1 {
+        font-size: 8vh;
+    }
+
+    .image-titel p {
+        font-size: 1.5em;
+    }
+
+    .button {
+        font-size: 1.5rem;
+        padding: 15px 50px;
+    }
 }
