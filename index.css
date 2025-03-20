@@ -87,4 +87,48 @@ body {
     .toggle:checked~.nav-links {
         transform: translateX(0);
     }
+    
+/* image-titel */
+.image-titel {
+    width: 100%;
+    height: 500px;
+    background-size: 100% 100%;
+    background-image: url(background.jpg);
+    align-content: center;
+    justify-items: center;
+    color: #ffffff;
+
+}
+
+.image-titel h1 {
+    font-size: 15vh;
+    text-shadow: 2px black;
+    transition: ease 0.3s;
+}
+
+.image-titel h1:hover {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+
+}
+
+.image-titel p {
+    font: 1.5em sans-serif;
+    font-weight: 700;
+    margin: 20px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.button {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: deeppink;
+    margin-top: 20px;
+    padding: 15px 50px;
+    border-radius: 10px;
+}
 }
