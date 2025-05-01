@@ -261,7 +261,7 @@ body {
 
 .location-content {
     display: grid;
-    grid-template-columns: repeat(auto, minmax(250px, 1fr));
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
     gap: 20px;
     max-width: 100%;
     margin: 0 auto;
@@ -305,7 +305,7 @@ body {
 }
 
 /* Tablet View */
-@media (max-width: 1365px) {
+@media (max-width: 1370px) {
     .location-content {
         grid-template-columns: repeat(4, 1fr);
     }
