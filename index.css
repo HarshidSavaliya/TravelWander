@@ -305,7 +305,7 @@ body {
 }
 
 /* Tablet View */
-@media (max-width: 1500px) {
+@media (max-width: 1300px) {
     .location-content {
         grid-template-columns: repeat(3, 1fr);
     }
